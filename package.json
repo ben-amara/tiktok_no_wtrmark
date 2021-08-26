@@ -8,9 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MRHRTZ/Tiktok-Scraper-Without-Watermark.git"
+    "url": "git+https://github.com/ben-amara/tiktok_video_no_wtrmark.git"
   },  
-  "keywords": [],
+  "keywords": [
+    "Tiktok Downloader",
+    "Tiktok Scraper",
+    "Tiktok No WM",
+    "Tiktok No Watermark"    
+  ],
   "author": "ben-amara",
   "license": "ISC"
 }
