@@ -1,0 +1,16 @@
+{
+  "name": "tiktok_video_no_wtrmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRHRTZ/Tiktok-Scraper-Without-Watermark.git"
+  },  
+  "keywords": [],
+  "author": "ben-amara",
+  "license": "ISC"
+}
