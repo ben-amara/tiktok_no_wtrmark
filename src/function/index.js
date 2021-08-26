@@ -1,4 +1,6 @@
 const { default: Axios } = require('axios')
+const fs = require('fs');
+const path = require('path');
 
 function tikTokNoWatermark(url) {
 
@@ -14,9 +16,27 @@ function tikTokNoWatermark(url) {
              };
              
              Axios.request(options).then((res) => {
-               resolve({ status: true, result: res.data })
+              downloadFile(res.data.data.video_link_nwm, res.data.data.video_id)
+               //resolve({ status: true, result: res.data.video_id })
              }).catch((e) => reject(e));                   
      });
 }
+
+const downloadFile = async (fileUrl, file_id) => {
+  try {
+    const response = await Axios({
+      method: 'GET',
+      url: fileUrl,
+      responseType: 'stream',
+    });
+
+    const w = response.data.pipe(fs.createWriteStream(`./${file_id}.mp4`));
+    w.on('finish', () => {
+      console.log('Successfully downloaded file!');
+    });
+  } catch (err) {
+    throw new Error(err);
+  }
+}; 
 
 module.exports.tikTokNoWatermark = tikTokNoWatermark
